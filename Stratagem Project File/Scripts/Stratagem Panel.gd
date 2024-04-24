@@ -11,11 +11,11 @@ func _ready():
 func _process(delta):
 	pass
 
+func stratagem1():
+	$"../SelectedStratagemPanel/REINFORCE".visible = true
 
-func stratagem1() -> Array:
-	$PanelContainer/Panel/TextureRect.texture = $ScrollContainer/VBoxContainer/Control/MarginContainer/TextureRect.texture
-	stratagemarr = ["Left","Left","Left","Left"]
-	return stratagemarr
-
-func _on_touch_screen_button_pressed():
+func _on_button_pressed():
+	var arrayObject = ButtonMap.new()
+	arrayObject.inputArray.clear()
 	stratagem1()
+	

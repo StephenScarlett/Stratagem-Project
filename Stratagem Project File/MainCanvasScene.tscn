@@ -1,0 +1,231 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch471hvinhcxs"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_8g5hp"]
+[ext_resource type="Texture2D" uid="uid://cwywu6c1uvi3t" path="res://Assets/Black Background.jpg" id="1_8rw30"]
+[ext_resource type="PackedScene" uid="uid://k6ul76xuaukw" path="res://Stratagem Panel.tscn" id="2_km0iv"]
+[ext_resource type="Texture2D" uid="uid://wfwg8ym2og2h" path="res://Assets/Arrow.png" id="3_gh80c"]
+[ext_resource type="Script" path="res://Scripts/Control2.gd" id="4_aeb5v"]
+[ext_resource type="Texture2D" uid="uid://bqjv1oelyxx41" path="res://Assets/TestSelectedStratagem.png" id="5_kksoe"]
+
+[node name="MainCanvas" type="CanvasLayer"]
+script = ExtResource("1_8g5hp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8rw30")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" parent="." instance=ExtResource("2_km0iv")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -156.0
+offset_right = 335.0
+offset_bottom = 316.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("3_gh80c")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 42.0
+offset_right = 80.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_aeb5v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="TouchScreenButton" parent="Control2"]
+position = Vector2(12, 150)
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_gh80c")
+
+[node name="Right" type="TouchScreenButton" parent="Control2"]
+position = Vector2(172, 198)
+rotation = -3.14159
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_gh80c")
+
+[node name="Up" type="TouchScreenButton" parent="Control2"]
+position = Vector2(116, 94)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_gh80c")
+
+[node name="Down" type="TouchScreenButton" parent="Control2"]
+position = Vector2(68, 198)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("3_gh80c")
+
+[node name="SelectedStratagemPanel" type="Panel" parent="."]
+offset_left = 482.0
+offset_top = 78.0
+offset_right = 522.0
+offset_bottom = 118.0
+scale = Vector2(14.96, 5.36)
+metadata/_edit_use_anchors_ = true
+
+[node name="REINFORCE" type="Control" parent="SelectedStratagemPanel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/REINFORCE"]
+layout_mode = 0
+offset_left = 13.9706
+offset_right = 53.9706
+offset_bottom = 40.0
+scale = Vector2(0.27731, 0.378731)
+texture = ExtResource("5_kksoe")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="SelectedStratagemPanel"]
+layout_mode = 0
+offset_left = 10.2941
+offset_top = 24.4403
+offset_right = 12.2941
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="g1" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
+visible = false
+modulate = Color(0.0497019, 0.656429, 0.0410176, 1)
+layout_mode = 0
+offset_left = 10.2941
+offset_top = 24.4403
+offset_right = 12.2941
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r1" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
+visible = false
+modulate = Color(0.987068, 0, 0.13703, 1)
+layout_mode = 0
+offset_left = 10.2941
+offset_top = 24.4403
+offset_right = 12.2941
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="SelectedStratagemPanel"]
+layout_mode = 0
+offset_left = 13.6364
+offset_top = 23.5075
+offset_right = 15.6364
+offset_bottom = 28.5075
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="g2" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
+visible = false
+modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
+layout_mode = 0
+offset_left = 13.6364
+offset_top = 23.5075
+offset_right = 15.6364
+offset_bottom = 28.5075
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r2" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
+visible = false
+modulate = Color(0.988235, 0, 0.137255, 1)
+layout_mode = 0
+offset_left = 13.6364
+offset_top = 23.5075
+offset_right = 15.6364
+offset_bottom = 28.5075
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="SelectedStratagemPanel"]
+layout_mode = 0
+offset_left = 18.1818
+offset_top = 24.4403
+offset_right = 20.1818
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="g3" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
+visible = false
+modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
+layout_mode = 0
+offset_left = 18.1818
+offset_top = 24.4403
+offset_right = 20.1818
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r3" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
+visible = false
+modulate = Color(0.988235, 0, 0.137255, 1)
+layout_mode = 0
+offset_left = 18.1818
+offset_top = 24.4403
+offset_right = 20.1818
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="SelectedStratagemPanel"]
+layout_mode = 0
+offset_left = 21.9251
+offset_top = 23.8806
+offset_right = 23.9251
+offset_bottom = 28.8806
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="g4" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
+visible = false
+modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
+layout_mode = 0
+offset_left = 21.9251
+offset_top = 23.8806
+offset_right = 23.9251
+offset_bottom = 28.8806
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r4" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
+visible = false
+modulate = Color(0.988235, 0, 0.137255, 1)
+layout_mode = 0
+offset_left = 21.9251
+offset_top = 23.8806
+offset_right = 23.9251
+offset_bottom = 28.8806
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[connection signal="pressed" from="Control2/Left" to="Control2" method="_on_left_pressed"]
+[connection signal="pressed" from="Control2/Right" to="Control2" method="_on_right_pressed"]
+[connection signal="pressed" from="Control2/Up" to="Control2" method="_on_up_pressed"]
+[connection signal="pressed" from="Control2/Down" to="Control2" method="_on_down_pressed"]

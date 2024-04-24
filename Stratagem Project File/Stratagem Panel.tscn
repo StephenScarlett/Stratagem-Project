@@ -29,6 +29,16 @@ layout_mode = 2
 texture = ExtResource("1_0pcmt")
 expand_mode = 5
 
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/TextureRect"]
+visibility_layer = 0
+layout_mode = 2
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 402.0
+offset_bottom = 276.0
+scale = Vector2(0.843744, 0.298268)
+mouse_filter = 1
+
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_0pcmt")
@@ -73,3 +83,5 @@ expand_mode = 5
 layout_mode = 2
 texture = ExtResource("1_0pcmt")
 expand_mode = 5
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/TextureRect/Button" to="." method="_on_button_pressed"]
