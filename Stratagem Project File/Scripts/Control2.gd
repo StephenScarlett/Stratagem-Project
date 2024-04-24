@@ -3,23 +3,21 @@ extends Control
 class_name ButtonMap
 
 var inputArray = []
-var resultArray = [1,1,1,2]
+var resultArray = [0,0,0,0,0]
 
 func _ready():
 	pass 
 
 func _process(delta):
-	
+	if (inputArray == resultArray):
+		print("winner")
+		inputArray.clear()
 		
-	for x in resultArray.size():
-		match x:
-			1:
-				if (inputArray[x] == resultArray[x]):
-					$"../SelectedStratagemPanel/REINFORCE/g1".visble = true
-					
-					
-				
-		
+	#for x in resultArray.size():
+		#match x:
+			#1:
+				#if (inputArray[x] == resultArray[x]):
+					#$"../SelectedStratagemPanel/REINFORCE/g1".visble = true
 
 func _on_left_pressed():
 	inputArray.push_back(1)

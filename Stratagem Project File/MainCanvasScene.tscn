@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch471hvinhcxs"]
+[gd_scene load_steps=8 format=3 uid="uid://ch471hvinhcxs"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_8g5hp"]
 [ext_resource type="Texture2D" uid="uid://cwywu6c1uvi3t" path="res://Assets/Black Background.jpg" id="1_8rw30"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://wfwg8ym2og2h" path="res://Assets/Arrow.png" id="3_gh80c"]
 [ext_resource type="Script" path="res://Scripts/Control2.gd" id="4_aeb5v"]
 [ext_resource type="Texture2D" uid="uid://bqjv1oelyxx41" path="res://Assets/TestSelectedStratagem.png" id="5_kksoe"]
+[ext_resource type="Script" path="res://StratagemScript.gd" id="6_vg823"]
 
 [node name="MainCanvas" type="CanvasLayer"]
 script = ExtResource("1_8g5hp")
@@ -87,12 +88,18 @@ offset_bottom = 118.0
 scale = Vector2(14.96, 5.36)
 metadata/_edit_use_anchors_ = true
 
-[node name="REINFORCE" type="Control" parent="SelectedStratagemPanel"]
+[node name="STRATAGEMS" type="Control" parent="SelectedStratagemPanel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_vg823")
+
+[node name="REINFORCE" type="Control" parent="SelectedStratagemPanel/STRATAGEMS"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/REINFORCE"]
+[node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/STRATAGEMS/REINFORCE"]
 layout_mode = 0
 offset_left = 13.9706
 offset_right = 53.9706
@@ -101,7 +108,23 @@ scale = Vector2(0.27731, 0.378731)
 texture = ExtResource("5_kksoe")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="SelectedStratagemPanel"]
+[node name="RESUPPLY" type="Control" parent="SelectedStratagemPanel/STRATAGEMS"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/STRATAGEMS/RESUPPLY"]
+modulate = Color(0.172, 0.476, 100, 1)
+layout_mode = 0
+offset_left = 13.9706
+offset_right = 53.9706
+offset_bottom = 40.0
+scale = Vector2(0.27731, 0.378731)
+texture = ExtResource("5_kksoe")
+expand_mode = 1
+
+[node name="w1" type="TextureRect" parent="SelectedStratagemPanel"]
+visible = false
 layout_mode = 0
 offset_left = 10.2941
 offset_top = 24.4403
@@ -132,7 +155,8 @@ offset_bottom = 29.4403
 texture = ExtResource("3_gh80c")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="SelectedStratagemPanel"]
+[node name="w2" type="TextureRect" parent="SelectedStratagemPanel"]
+visible = false
 layout_mode = 0
 offset_left = 13.6364
 offset_top = 23.5075
@@ -163,7 +187,8 @@ offset_bottom = 28.5075
 texture = ExtResource("3_gh80c")
 expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="SelectedStratagemPanel"]
+[node name="w3" type="TextureRect" parent="SelectedStratagemPanel"]
+visible = false
 layout_mode = 0
 offset_left = 18.1818
 offset_top = 24.4403
@@ -194,7 +219,8 @@ offset_bottom = 29.4403
 texture = ExtResource("3_gh80c")
 expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="SelectedStratagemPanel"]
+[node name="w4" type="TextureRect" parent="SelectedStratagemPanel"]
+visible = false
 layout_mode = 0
 offset_left = 21.9251
 offset_top = 23.8806

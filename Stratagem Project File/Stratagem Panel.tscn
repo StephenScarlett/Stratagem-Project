@@ -25,6 +25,7 @@ size_flags_stretch_ratio = 5.0
 theme_override_constants/separation = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+modulate = Color(64.324, 1, 1, 1)
 layout_mode = 2
 texture = ExtResource("1_0pcmt")
 expand_mode = 5
@@ -40,9 +41,20 @@ scale = Vector2(0.843744, 0.298268)
 mouse_filter = 1
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 80, 1)
 layout_mode = 2
 texture = ExtResource("1_0pcmt")
 expand_mode = 5
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/TextureRect2"]
+visibility_layer = 0
+layout_mode = 2
+offset_left = 2.0
+offset_top = 2.99999
+offset_right = 402.0
+offset_bottom = 278.0
+scale = Vector2(0.843744, 0.298268)
+mouse_filter = 1
 
 [node name="TextureRect3" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -85,3 +97,4 @@ texture = ExtResource("1_0pcmt")
 expand_mode = 5
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/TextureRect2/Button2" to="." method="_on_button_2_pressed"]
