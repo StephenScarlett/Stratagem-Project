@@ -1,19 +1,20 @@
 extends Control
 
+class_name Stratagem
 
-# Called when the node enters the scene tree for the first time.
+var inputarr = []
+var stratagemarr = []
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
+func stratagem1() -> Array:
+	$PanelContainer/Panel/TextureRect.texture = $ScrollContainer/VBoxContainer/Control/MarginContainer/TextureRect.texture
+	stratagemarr = ["Left","Left","Left","Left"]
+	return stratagemarr
 
-func _on_scroll_container_scroll_started():
-	print("scroll start")
-
-
-func _on_scroll_container_scroll_ended():
-	print("scroll end")
+func _on_touch_screen_button_pressed():
+	stratagem1()

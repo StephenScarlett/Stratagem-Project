@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://k6ul76xuaukw"]
+[gd_scene load_steps=4 format=3 uid="uid://k6ul76xuaukw"]
 
 [ext_resource type="Texture2D" uid="uid://cg7bratwo766q" path="res://Assets/Test Stratagem .png" id="1_0pcmt"]
 [ext_resource type="Script" path="res://Scripts/Stratagem Panel.gd" id="1_tccm5"]
+[ext_resource type="Texture2D" uid="uid://wfwg8ym2og2h" path="res://Assets/Arrow.png" id="3_qc0f5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,10 +26,18 @@ theme_override_constants/separation = 90
 [node name="Control" type="Control" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/Control"]
 layout_mode = 0
 offset_right = 350.0
 offset_bottom = 90.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ScrollContainer/VBoxContainer/Control/MarginContainer"]
+modulate = Color(0, 0, 0, 0)
+scale = Vector2(0.664063, 0.185345)
+texture_normal = ExtResource("3_qc0f5")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Control/MarginContainer"]
+layout_mode = 2
 texture = ExtResource("1_0pcmt")
 expand_mode = 5
 
@@ -112,5 +121,27 @@ offset_bottom = 90.0
 texture = ExtResource("1_0pcmt")
 expand_mode = 5
 
-[connection signal="scroll_ended" from="ScrollContainer" to="." method="_on_scroll_container_scroll_ended"]
-[connection signal="scroll_started" from="ScrollContainer" to="." method="_on_scroll_container_scroll_started"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -7.0
+offset_top = 142.0
+offset_right = 343.0
+offset_bottom = 182.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 5
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Control/MarginContainer/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
