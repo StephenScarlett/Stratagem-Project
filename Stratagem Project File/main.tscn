@@ -35,4 +35,10 @@ grow_vertical = 0
 scale = Vector2(0.2, 0.2)
 icon = ExtResource("3_ai0w3")
 
+[node name="Nigga" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
