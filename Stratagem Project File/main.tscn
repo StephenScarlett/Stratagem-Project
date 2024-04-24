@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://vfxig6jng4bp"]
+[gd_scene load_steps=6 format=3 uid="uid://vfxig6jng4bp"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_7lrpa"]
 [ext_resource type="Texture2D" uid="uid://cwywu6c1uvi3t" path="res://Assets/Black Background.jpg" id="1_08eq0"]
 [ext_resource type="Texture2D" uid="uid://wfwg8ym2og2h" path="res://Assets/Arrow.png" id="3_ai0w3"]
 [ext_resource type="PackedScene" uid="uid://k6ul76xuaukw" path="res://Stratagem Panel.tscn" id="4_dn3xc"]
-[ext_resource type="Script" path="res://Scripts/Left.gd" id="5_2olea"]
-[ext_resource type="Script" path="res://Scripts/Right.gd" id="6_3v8yh"]
-[ext_resource type="Script" path="res://Scripts/Up.gd" id="7_ndc63"]
-[ext_resource type="Script" path="res://Scripts/Down.gd" id="8_rtgm8"]
+[ext_resource type="Script" path="res://Scripts/Control2.gd" id="5_e1ajt"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_7lrpa")
@@ -39,35 +36,46 @@ grow_vertical = 0
 scale = Vector2(0.2, 0.2)
 icon = ExtResource("3_ai0w3")
 
-[node name="Left" type="TouchScreenButton" parent="."]
-position = Vector2(592, 400)
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 42.0
+offset_right = 80.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_e1ajt")
+
+[node name="Left" type="TouchScreenButton" parent="Control2"]
+position = Vector2(12, 150)
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("3_ai0w3")
-script = ExtResource("5_2olea")
 
-[node name="Right" type="TouchScreenButton" parent="."]
-position = Vector2(752, 448)
-rotation = 3.14159
+[node name="Right" type="TouchScreenButton" parent="Control2"]
+position = Vector2(172, 198)
+rotation = -3.14159
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("3_ai0w3")
-script = ExtResource("6_3v8yh")
 
-[node name="Up" type="TouchScreenButton" parent="."]
-position = Vector2(696, 344)
+[node name="Up" type="TouchScreenButton" parent="Control2"]
+position = Vector2(116, 94)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("3_ai0w3")
-script = ExtResource("7_ndc63")
 
-[node name="Down" type="TouchScreenButton" parent="."]
-position = Vector2(648, 448)
-rotation = 4.71239
+[node name="Down" type="TouchScreenButton" parent="Control2"]
+position = Vector2(68, 198)
+rotation = -1.5708
 scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("3_ai0w3")
-script = ExtResource("8_rtgm8")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
-[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
-[connection signal="pressed" from="Up" to="." method="_on_up_pressed"]
-[connection signal="pressed" from="Down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="Control2/Left" to="Control2" method="_on_left_pressed"]
+[connection signal="pressed" from="Control2/Right" to="Control2" method="_on_right_pressed"]
+[connection signal="pressed" from="Control2/Up" to="Control2" method="_on_up_pressed"]
+[connection signal="pressed" from="Control2/Down" to="Control2" method="_on_down_pressed"]
