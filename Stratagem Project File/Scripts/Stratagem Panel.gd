@@ -11,8 +11,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func getInputs() -> Array:
-	pass
 
 func stratagem1() -> Array:
 	$PanelContainer/Panel/TextureRect.texture = $ScrollContainer/VBoxContainer/Control/MarginContainer/TextureRect.texture
