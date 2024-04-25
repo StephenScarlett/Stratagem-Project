@@ -8,6 +8,9 @@ var resultArray = [0,0,0,0,0]
 func _ready():
 	pass 
 
+func _clearinputarray():
+	inputArray.clear()
+
 func _process(delta):
 	if (inputArray == resultArray):
 		print("winner")

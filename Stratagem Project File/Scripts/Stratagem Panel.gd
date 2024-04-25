@@ -1,4 +1,4 @@
-extends StratagemParent
+extends Control
 
 class_name Stratagem
 
@@ -35,15 +35,17 @@ func stratagem_resupply():
 	#$"../SelectedStratagemPanel/STRATAGEMS/REINFORCE".visible = false
 
 func _on_button_pressed():
+	
 	var arrayObject = ButtonMap.new()
-	arrayObject.inputArray.clear()
+	arrayObject.inputArray = []
+	
 	arrayObject.resultArray = [1,1,1,2]
 	stratagem_reinforce()
 	print("button pressed")
 	
 func _on_button_2_pressed():
 	var arrayObject = ButtonMap.new()
-	arrayObject.inputArray.clear()
+	arrayObject.inputArray = []
 	arrayObject.resultArray = [2,2,2,1]
 	stratagem_resupply()
 	print("button pressed 2")
