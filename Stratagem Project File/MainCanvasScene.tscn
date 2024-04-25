@@ -23,6 +23,7 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Control" parent="." instance=ExtResource("2_km0iv")]
+top_level = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
@@ -81,6 +82,7 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("3_gh80c")
 
 [node name="SelectedStratagemPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 482.0
 offset_top = 78.0
 offset_right = 522.0
@@ -89,12 +91,14 @@ scale = Vector2(14.96, 5.36)
 metadata/_edit_use_anchors_ = true
 
 [node name="STRATAGEMS" type="Control" parent="SelectedStratagemPanel"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_vg823")
 
 [node name="REINFORCE" type="Control" parent="SelectedStratagemPanel/STRATAGEMS"]
+clip_children = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -109,6 +113,7 @@ texture = ExtResource("5_kksoe")
 expand_mode = 1
 
 [node name="RESUPPLY" type="Control" parent="SelectedStratagemPanel/STRATAGEMS"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -116,9 +121,10 @@ offset_bottom = 40.0
 [node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/STRATAGEMS/RESUPPLY"]
 modulate = Color(0.172, 0.476, 100, 1)
 layout_mode = 0
-offset_left = 13.9706
-offset_right = 53.9706
-offset_bottom = 40.0
+offset_left = 14.1043
+offset_top = 21.6418
+offset_right = 54.1043
+offset_bottom = 61.6418
 scale = Vector2(0.27731, 0.378731)
 texture = ExtResource("5_kksoe")
 expand_mode = 1

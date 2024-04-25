@@ -13,6 +13,8 @@ func _process(delta):
 
 func make_children_invisible():
 	var children = get_children()
+	print("make chilren invis")
 	for child in children:
 		if child is Control:
 			child.visible = false
+	
