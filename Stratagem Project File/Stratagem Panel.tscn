@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://k6ul76xuaukw"]
 
 [ext_resource type="Texture2D" uid="uid://cg7bratwo766q" path="res://Assets/Test Stratagem .png" id="1_0pcmt"]
-[ext_resource type="Script" path="res://Scripts/Stratagem Panel.gd" id="1_tccm5"]
+[ext_resource type="Script" path="res://Scripts/Stratagem.gd" id="1_6h36q"]
 
-[node name="Control" type="Control"]
+[node name="Stratagem Side Panel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tccm5")
+script = ExtResource("1_6h36q")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2

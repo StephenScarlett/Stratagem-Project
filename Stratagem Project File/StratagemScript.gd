@@ -10,11 +10,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-func make_children_invisible():
-	var children = get_children()
-	print("make chilren invis")
-	for child in children:
-		if child is Control:
-			child.visible = false
 	
