@@ -1,15 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch471hvinhcxs"]
+[gd_scene load_steps=5 format=3 uid="uid://ch471hvinhcxs"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_8g5hp"]
 [ext_resource type="Texture2D" uid="uid://cwywu6c1uvi3t" path="res://Assets/Black Background.jpg" id="1_8rw30"]
 [ext_resource type="PackedScene" uid="uid://k6ul76xuaukw" path="res://Stratagem Panel.tscn" id="2_km0iv"]
-[ext_resource type="Texture2D" uid="uid://wfwg8ym2og2h" path="res://Assets/Arrow.png" id="3_gh80c"]
-[ext_resource type="Texture2D" uid="uid://bqjv1oelyxx41" path="res://Assets/TestSelectedStratagem.png" id="5_kksoe"]
+[ext_resource type="Texture2D" uid="uid://bstofoye0i7tm" path="res://Assets/Arrow.png" id="3_gh80c"]
 
 [node name="MainCanvas" type="CanvasLayer"]
 script = ExtResource("1_8g5hp")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,56 +19,288 @@ texture = ExtResource("1_8rw30")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" parent="." instance=ExtResource("2_km0iv")]
+[node name="Stratagem Side Panel" parent="." instance=ExtResource("2_km0iv")]
 
-[node name="Button" type="Button" parent="."]
+[node name="D Pad" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -185.0
-offset_top = -156.0
-offset_right = 335.0
-offset_bottom = 316.0
+offset_left = -40.0
+offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.2, 0.2)
-icon = ExtResource("3_gh80c")
-metadata/_edit_use_anchors_ = true
 
-[node name="Control2" type="Control" parent="."]
+[node name="Left" type="Button" parent="D Pad"]
+layout_mode = 0
+offset_left = -312.0
+offset_top = -67.0
+offset_right = 208.0
+offset_bottom = 405.0
+scale = Vector2(0.2, 0.193)
+icon = ExtResource("3_gh80c")
+
+[node name="Right" type="Button" parent="D Pad"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 25.0
+offset_right = 540.0
+offset_bottom = 497.0
+rotation = 3.14159
+scale = Vector2(0.2, 0.193)
+icon = ExtResource("3_gh80c")
+
+[node name="Up" type="Button" parent="D Pad"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = -196.0
+offset_right = 422.0
+offset_bottom = 276.0
+rotation = 1.5708
+scale = Vector2(0.2, 0.193)
+icon = ExtResource("3_gh80c")
+
+[node name="Down" type="Button" parent="D Pad"]
+layout_mode = 0
+offset_left = -188.0
+offset_top = 29.0
+offset_right = 332.0
+offset_bottom = 501.0
+rotation = 4.71239
+scale = Vector2(0.2, 0.193)
+icon = ExtResource("3_gh80c")
+
+[node name="Stratagem Texture" type="TextureRect" parent="."]
+offset_left = 482.0
+offset_top = 78.0
+offset_right = 532.0
+offset_bottom = 118.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Arrows" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = 42.0
-offset_right = 80.0
-offset_bottom = 82.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+anchors_preset = 0
+offset_left = 482.0
+offset_top = 78.0
+offset_right = 522.0
+offset_bottom = 118.0
 
-[node name="Button" type="Button" parent="Control2"]
-layout_mode = 0
-offset_left = -83.0
-offset_top = 124.0
-offset_right = 437.0
-offset_bottom = 596.0
-scale = Vector2(0.122921, 0.119081)
-icon = ExtResource("3_gh80c")
+[node name="l1" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = -51.0
+offset_top = 163.0
+offset_right = -46.0
+offset_bottom = 168.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
 
-[node name="Button2" type="Button" parent="Control2"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 59.0
-offset_right = 531.0
-offset_bottom = 531.0
-scale = Vector2(0.122921, 0.119081)
-icon = ExtResource("3_gh80c")
+[node name="r1" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = -50.0
+offset_top = 164.0
+offset_right = -45.0
+offset_bottom = 169.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+flip_h = true
+
+[node name="u1" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 3.0
+offset_top = 163.0
+offset_right = 8.0
+offset_bottom = 168.0
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="d1" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = -51.0
+offset_top = 214.0
+offset_right = -46.0
+offset_bottom = 219.0
+rotation = 4.71239
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="l2" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 45.0
+offset_top = 165.0
+offset_right = 50.0
+offset_bottom = 170.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r2" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 46.0
+offset_top = 163.0
+offset_right = 51.0
+offset_bottom = 168.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+flip_h = true
+
+[node name="u2" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 98.0
+offset_top = 163.0
+offset_right = 103.0
+offset_bottom = 168.0
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="d2" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 44.0
+offset_top = 214.0
+offset_right = 49.0
+offset_bottom = 219.0
+rotation = 4.71239
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="l3" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 142.0
+offset_top = 166.0
+offset_right = 147.0
+offset_bottom = 171.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r3" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 143.0
+offset_top = 165.0
+offset_right = 148.0
+offset_bottom = 170.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+flip_h = true
+
+[node name="u3" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 193.0
+offset_top = 164.0
+offset_right = 198.0
+offset_bottom = 169.0
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="d3" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 141.0
+offset_top = 215.0
+offset_right = 146.0
+offset_bottom = 220.0
+rotation = 4.71239
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="l4" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 231.0
+offset_top = 162.0
+offset_right = 236.0
+offset_bottom = 167.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r4" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 231.0
+offset_top = 163.0
+offset_right = 236.0
+offset_bottom = 168.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+flip_h = true
+
+[node name="u4" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 279.0
+offset_top = 163.0
+offset_right = 284.0
+offset_bottom = 168.0
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="d4" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 229.0
+offset_top = 215.0
+offset_right = 234.0
+offset_bottom = 220.0
+rotation = 4.71239
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="l5" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 324.0
+offset_top = 164.0
+offset_right = 329.0
+offset_bottom = 169.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r5" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 323.0
+offset_top = 165.0
+offset_right = 328.0
+offset_bottom = 170.0
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+flip_h = true
+
+[node name="u5" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 374.0
+offset_top = 164.0
+offset_right = 379.0
+offset_bottom = 169.0
+rotation = 1.5708
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="d5" type="TextureRect" parent="Arrows"]
+visible = false
+offset_left = 322.0
+offset_top = 214.0
+offset_right = 327.0
+offset_bottom = 219.0
+rotation = 4.71239
+scale = Vector2(10, 10)
+texture = ExtResource("3_gh80c")
+expand_mode = 1
 
 [node name="SelectedStratagemPanel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -78,173 +309,11 @@ offset_top = 78.0
 offset_right = 522.0
 offset_bottom = 118.0
 scale = Vector2(14.96, 5.36)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="STRATAGEMS" type="Control" parent="SelectedStratagemPanel"]
-self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="REINFORCE" type="Control" parent="SelectedStratagemPanel/STRATAGEMS"]
-clip_children = 1
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/STRATAGEMS/REINFORCE"]
-layout_mode = 0
-offset_left = 13.9706
-offset_right = 53.9706
-offset_bottom = 40.0
-scale = Vector2(0.27731, 0.378731)
-texture = ExtResource("5_kksoe")
-expand_mode = 1
-
-[node name="RESUPPLY" type="Control" parent="SelectedStratagemPanel/STRATAGEMS"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/STRATAGEMS/RESUPPLY"]
-modulate = Color(0.172, 0.476, 100, 1)
-layout_mode = 0
-offset_left = 14.1043
-offset_top = 21.6418
-offset_right = 54.1043
-offset_bottom = 61.6418
-scale = Vector2(0.27731, 0.378731)
-texture = ExtResource("5_kksoe")
-expand_mode = 1
-
-[node name="w1" type="TextureRect" parent="SelectedStratagemPanel"]
-visible = false
-layout_mode = 0
-offset_left = 10.2941
-offset_top = 24.4403
-offset_right = 12.2941
-offset_bottom = 29.4403
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="g1" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
-visible = false
-modulate = Color(0.0497019, 0.656429, 0.0410176, 1)
-layout_mode = 0
-offset_left = 10.2941
-offset_top = 24.4403
-offset_right = 12.2941
-offset_bottom = 29.4403
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="r1" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
-visible = false
-modulate = Color(0.987068, 0, 0.13703, 1)
-layout_mode = 0
-offset_left = 10.2941
-offset_top = 24.4403
-offset_right = 12.2941
-offset_bottom = 29.4403
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="w2" type="TextureRect" parent="SelectedStratagemPanel"]
-visible = false
-layout_mode = 0
-offset_left = 13.6364
-offset_top = 23.5075
-offset_right = 15.6364
-offset_bottom = 28.5075
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="g2" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
-visible = false
-modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
-layout_mode = 0
-offset_left = 13.6364
-offset_top = 23.5075
-offset_right = 15.6364
-offset_bottom = 28.5075
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="r2" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
-visible = false
-modulate = Color(0.988235, 0, 0.137255, 1)
-layout_mode = 0
-offset_left = 13.6364
-offset_top = 23.5075
-offset_right = 15.6364
-offset_bottom = 28.5075
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="w3" type="TextureRect" parent="SelectedStratagemPanel"]
-visible = false
-layout_mode = 0
-offset_left = 18.1818
-offset_top = 24.4403
-offset_right = 20.1818
-offset_bottom = 29.4403
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="g3" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
-visible = false
-modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
-layout_mode = 0
-offset_left = 18.1818
-offset_top = 24.4403
-offset_right = 20.1818
-offset_bottom = 29.4403
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="r3" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
-visible = false
-modulate = Color(0.988235, 0, 0.137255, 1)
-layout_mode = 0
-offset_left = 18.1818
-offset_top = 24.4403
-offset_right = 20.1818
-offset_bottom = 29.4403
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="w4" type="TextureRect" parent="SelectedStratagemPanel"]
-visible = false
-layout_mode = 0
-offset_left = 21.9251
-offset_top = 23.8806
-offset_right = 23.9251
-offset_bottom = 28.8806
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="g4" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
-visible = false
-modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
-layout_mode = 0
-offset_left = 21.9251
-offset_top = 23.8806
-offset_right = 23.9251
-offset_bottom = 28.8806
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[node name="r4" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
-visible = false
-modulate = Color(0.988235, 0, 0.137255, 1)
-layout_mode = 0
-offset_left = 21.9251
-offset_top = 23.8806
-offset_right = 23.9251
-offset_bottom = 28.8806
-texture = ExtResource("3_gh80c")
-expand_mode = 1
-
-[connection signal="pressed" from="Control2/Button" to="Control" method="_on_left_pressed"]
-[connection signal="pressed" from="Control2/Button2" to="Control" method="_on_right_pressed"]
+[connection signal="pressed" from="D Pad/Left" to="Stratagem Side Panel" method="_on_left_pressed"]
+[connection signal="pressed" from="D Pad/Right" to="Stratagem Side Panel" method="_on_right_pressed"]
+[connection signal="pressed" from="D Pad/Up" to="Stratagem Side Panel" method="_on_up_pressed"]
+[connection signal="pressed" from="D Pad/Down" to="Stratagem Side Panel" method="_on_down_pressed"]

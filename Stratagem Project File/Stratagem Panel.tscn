@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://k6ul76xuaukw"]
+[gd_scene load_steps=12 format=3 uid="uid://k6ul76xuaukw"]
 
 [ext_resource type="Texture2D" uid="uid://cg7bratwo766q" path="res://Assets/Test Stratagem .png" id="1_0pcmt"]
 [ext_resource type="Script" path="res://Scripts/Stratagem.gd" id="1_6h36q"]
+[ext_resource type="Texture2D" uid="uid://bvs50mwidk2al" path="res://Assets/Reinforce.png" id="2_frj4c"]
+[ext_resource type="Texture2D" uid="uid://bh0l00bpnaw4p" path="res://Assets/Resupply.png" id="3_p4l20"]
+[ext_resource type="Texture2D" uid="uid://b1d7yow63mt3o" path="res://Assets/SupplyPack.png" id="4_lgy66"]
+[ext_resource type="Texture2D" uid="uid://ddqvf5axtr0d5" path="res://Assets/OrbitalLaser.png" id="5_50f6p"]
+[ext_resource type="Texture2D" uid="uid://bfu0oma6m0db" path="res://Assets/Orbital Airburst.png" id="6_7nw7p"]
+[ext_resource type="Texture2D" uid="uid://crdwqsp7e3cg5" path="res://Assets/MortarSentry.png" id="7_5sl4p"]
+[ext_resource type="Texture2D" uid="uid://b35e2mfitcg1l" path="res://Assets/MachineGun.png" id="8_irlle"]
+
+[sub_resource type="Gradient" id="Gradient_xx3gj"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4dkpg"]
+gradient = SubResource("Gradient_xx3gj")
 
 [node name="Stratagem Side Panel" type="Control"]
 layout_mode = 3
@@ -11,6 +23,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6h36q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.403922, 0.403922, 0.403922, 0.721569)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(5.34503, 8.45203)
+texture = SubResource("GradientTexture2D_4dkpg")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
@@ -22,31 +42,30 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
-theme_override_constants/separation = 1
+theme_override_constants/separation = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-modulate = Color(64.324, 1, 1, 1)
+[node name="Reinforce" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_0pcmt")
+texture = ExtResource("2_frj4c")
 expand_mode = 5
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/TextureRect"]
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Reinforce"]
 visibility_layer = 0
 layout_mode = 2
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 402.0
 offset_bottom = 276.0
-scale = Vector2(0.843744, 0.298268)
+scale = Vector2(0.421812, 0.315839)
 mouse_filter = 1
+icon = ExtResource("2_frj4c")
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-modulate = Color(1, 1, 80, 1)
+[node name="Resupply" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_0pcmt")
+texture = ExtResource("3_p4l20")
 expand_mode = 5
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/TextureRect2"]
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/Resupply"]
 visibility_layer = 0
 layout_mode = 2
 offset_left = 2.0
@@ -56,30 +75,70 @@ offset_bottom = 278.0
 scale = Vector2(0.843744, 0.298268)
 mouse_filter = 1
 
-[node name="TextureRect3" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+[node name="Supply Pack" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_0pcmt")
+texture = ExtResource("4_lgy66")
 expand_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Supply Pack"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(42.5459, 10.5383)
+mouse_filter = 1
+
+[node name="Orbital Laser" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_0pcmt")
+texture = ExtResource("5_50f6p")
 expand_mode = 5
 
-[node name="TextureRect5" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Orbital Laser"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(42.5727, 10.8139)
+mouse_filter = 1
+
+[node name="Orbital Airburst" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_0pcmt")
+texture = ExtResource("6_7nw7p")
 expand_mode = 5
 
-[node name="TextureRect6" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Orbital Airburst"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(42.7043, 10.8831)
+mouse_filter = 1
+
+[node name="Mortar Sentry" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_0pcmt")
+texture = ExtResource("7_5sl4p")
 expand_mode = 5
 
-[node name="TextureRect7" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Mortar Sentry"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(42.4354, 10.948)
+mouse_filter = 1
+
+[node name="Machine Gun" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_0pcmt")
+texture = ExtResource("8_irlle")
 expand_mode = 5
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Machine Gun"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.765
+scale = Vector2(42.6756, 10.0019)
+mouse_filter = 1
 
 [node name="TextureRect8" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -96,5 +155,10 @@ layout_mode = 2
 texture = ExtResource("1_0pcmt")
 expand_mode = 5
 
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/TextureRect/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/TextureRect2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Reinforce/Button" to="." method="reinforce_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Resupply/Button2" to="." method="resupply_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Supply Pack/Button" to="." method="supplyPack_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Orbital Laser/Button" to="." method="orbitalLaser_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Orbital Airburst/Button" to="." method="orbitalAirburst_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Mortar Sentry/Button" to="." method="mortarSentry_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Machine Gun/Button" to="." method="machineGun_pressed"]
