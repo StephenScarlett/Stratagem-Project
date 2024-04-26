@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://6lpj2hxvy3an"]
+
+[ext_resource type="Texture2D" uid="uid://bbcnddp0mjovc" path="res://Assets/GArrow2.png" id="1_qoxmm"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 32.0
+offset_bottom = 25.0
+texture = ExtResource("1_qoxmm")
+expand_mode = 2

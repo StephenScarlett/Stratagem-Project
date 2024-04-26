@@ -6,8 +6,14 @@ var inputArray = []
 var stratagem1 = [1,1,1,2]
 var resultArray = [1,1,1,2]
 
+@onready var leftarrow = preload("res://ArrowScenes/leftGarrow.tscn")
+@onready var rightarrow = preload("res://ArrowScenes/rightarrow.tscn")
+@onready var uparrow = preload("res://ArrowScenes/upGarrow.tscn")
+@onready var downarrow = preload("res://ArrowScenes/downarrow.tscn")
+@onready var stratagemnode = $"../Control"
+
 func _ready():
-	pass 
+	pass
 
 func _process(delta):
 	
@@ -23,8 +29,12 @@ func _process(delta):
 		
 
 func _on_left_pressed():
-	inputArray.push_back(1)
+	if stratagemnode.sceneArray.size() != 0:
+		inputArray.push_back(1)
+		var instance = leftarrow.instantiate()
+		$"../Panel/HBoxContainer".add_child(instance)
 	print(inputArray)
+	print(stratagemnode.sceneArray.size())
 
 func _on_right_pressed():
 	inputArray.push_back(2)
