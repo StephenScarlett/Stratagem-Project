@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo3m1j4r06ad7"]
+
+[ext_resource type="Texture2D" uid="uid://wfwg8ym2og2h" path="res://Assets/Arrow.png" id="1_0nrbk"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_left = 32.0
+offset_top = 25.0
+offset_right = 64.0
+offset_bottom = 50.0
+rotation = 3.14159
+texture = ExtResource("1_0nrbk")
+expand_mode = 2
+flip_h = true

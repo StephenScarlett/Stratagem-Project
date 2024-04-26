@@ -3,6 +3,7 @@ extends Control
 class_name ButtonMap
 
 var inputArray = []
+var stratagem1 = [1,1,1,2]
 var resultArray = [1,1,1,2]
 
 func _ready():
@@ -10,12 +11,12 @@ func _ready():
 
 func _process(delta):
 	
-		
-	for x in resultArray.size():
-		match x:
-			1:
-				if (inputArray[x] == resultArray[x]):
-					$"../SelectedStratagemPanel/REINFORCE/g1".visble = true
+	pass
+	#for x in resultArray.size():
+		#match x:
+			#1:
+				#if (inputArray[x] == resultArray[x]):
+					#$"../SelectedStratagemPanel/REINFORCE/g1".visble = true
 					
 					
 				

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8sibtnj412uu"]
+
+[ext_resource type="Texture2D" uid="uid://wfwg8ym2og2h" path="res://Assets/Arrow.png" id="1_beamf"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 32.0
+offset_bottom = 25.0
+texture = ExtResource("1_beamf")
+expand_mode = 2
