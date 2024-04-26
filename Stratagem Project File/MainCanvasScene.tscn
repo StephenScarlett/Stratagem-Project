@@ -1,0 +1,250 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch471hvinhcxs"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_8g5hp"]
+[ext_resource type="Texture2D" uid="uid://cwywu6c1uvi3t" path="res://Assets/Black Background.jpg" id="1_8rw30"]
+[ext_resource type="PackedScene" uid="uid://k6ul76xuaukw" path="res://Stratagem Panel.tscn" id="2_km0iv"]
+[ext_resource type="Texture2D" uid="uid://wfwg8ym2og2h" path="res://Assets/Arrow.png" id="3_gh80c"]
+[ext_resource type="Texture2D" uid="uid://bqjv1oelyxx41" path="res://Assets/TestSelectedStratagem.png" id="5_kksoe"]
+
+[node name="MainCanvas" type="CanvasLayer"]
+script = ExtResource("1_8g5hp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8rw30")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" parent="." instance=ExtResource("2_km0iv")]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -156.0
+offset_right = 335.0
+offset_bottom = 316.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("3_gh80c")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = 42.0
+offset_right = 80.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control2"]
+layout_mode = 0
+offset_left = -83.0
+offset_top = 124.0
+offset_right = 437.0
+offset_bottom = 596.0
+scale = Vector2(0.122921, 0.119081)
+icon = ExtResource("3_gh80c")
+
+[node name="Button2" type="Button" parent="Control2"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 59.0
+offset_right = 531.0
+offset_bottom = 531.0
+scale = Vector2(0.122921, 0.119081)
+icon = ExtResource("3_gh80c")
+
+[node name="SelectedStratagemPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 482.0
+offset_top = 78.0
+offset_right = 522.0
+offset_bottom = 118.0
+scale = Vector2(14.96, 5.36)
+metadata/_edit_use_anchors_ = true
+
+[node name="STRATAGEMS" type="Control" parent="SelectedStratagemPanel"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="REINFORCE" type="Control" parent="SelectedStratagemPanel/STRATAGEMS"]
+clip_children = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/STRATAGEMS/REINFORCE"]
+layout_mode = 0
+offset_left = 13.9706
+offset_right = 53.9706
+offset_bottom = 40.0
+scale = Vector2(0.27731, 0.378731)
+texture = ExtResource("5_kksoe")
+expand_mode = 1
+
+[node name="RESUPPLY" type="Control" parent="SelectedStratagemPanel/STRATAGEMS"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="SelectedStratagemPanel/STRATAGEMS/RESUPPLY"]
+modulate = Color(0.172, 0.476, 100, 1)
+layout_mode = 0
+offset_left = 14.1043
+offset_top = 21.6418
+offset_right = 54.1043
+offset_bottom = 61.6418
+scale = Vector2(0.27731, 0.378731)
+texture = ExtResource("5_kksoe")
+expand_mode = 1
+
+[node name="w1" type="TextureRect" parent="SelectedStratagemPanel"]
+visible = false
+layout_mode = 0
+offset_left = 10.2941
+offset_top = 24.4403
+offset_right = 12.2941
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="g1" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
+visible = false
+modulate = Color(0.0497019, 0.656429, 0.0410176, 1)
+layout_mode = 0
+offset_left = 10.2941
+offset_top = 24.4403
+offset_right = 12.2941
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r1" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
+visible = false
+modulate = Color(0.987068, 0, 0.13703, 1)
+layout_mode = 0
+offset_left = 10.2941
+offset_top = 24.4403
+offset_right = 12.2941
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="w2" type="TextureRect" parent="SelectedStratagemPanel"]
+visible = false
+layout_mode = 0
+offset_left = 13.6364
+offset_top = 23.5075
+offset_right = 15.6364
+offset_bottom = 28.5075
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="g2" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
+visible = false
+modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
+layout_mode = 0
+offset_left = 13.6364
+offset_top = 23.5075
+offset_right = 15.6364
+offset_bottom = 28.5075
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r2" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
+visible = false
+modulate = Color(0.988235, 0, 0.137255, 1)
+layout_mode = 0
+offset_left = 13.6364
+offset_top = 23.5075
+offset_right = 15.6364
+offset_bottom = 28.5075
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="w3" type="TextureRect" parent="SelectedStratagemPanel"]
+visible = false
+layout_mode = 0
+offset_left = 18.1818
+offset_top = 24.4403
+offset_right = 20.1818
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="g3" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
+visible = false
+modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
+layout_mode = 0
+offset_left = 18.1818
+offset_top = 24.4403
+offset_right = 20.1818
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r3" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
+visible = false
+modulate = Color(0.988235, 0, 0.137255, 1)
+layout_mode = 0
+offset_left = 18.1818
+offset_top = 24.4403
+offset_right = 20.1818
+offset_bottom = 29.4403
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="w4" type="TextureRect" parent="SelectedStratagemPanel"]
+visible = false
+layout_mode = 0
+offset_left = 21.9251
+offset_top = 23.8806
+offset_right = 23.9251
+offset_bottom = 28.8806
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="g4" type="TextureRect" parent="SelectedStratagemPanel" groups=["Green"]]
+visible = false
+modulate = Color(0.0509804, 0.654902, 0.0392157, 1)
+layout_mode = 0
+offset_left = 21.9251
+offset_top = 23.8806
+offset_right = 23.9251
+offset_bottom = 28.8806
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[node name="r4" type="TextureRect" parent="SelectedStratagemPanel" groups=["Red"]]
+visible = false
+modulate = Color(0.988235, 0, 0.137255, 1)
+layout_mode = 0
+offset_left = 21.9251
+offset_top = 23.8806
+offset_right = 23.9251
+offset_bottom = 28.8806
+texture = ExtResource("3_gh80c")
+expand_mode = 1
+
+[connection signal="pressed" from="Control2/Button" to="Control" method="_on_left_pressed"]
+[connection signal="pressed" from="Control2/Button2" to="Control" method="_on_right_pressed"]

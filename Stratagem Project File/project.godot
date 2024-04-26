@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Stratagem Project"
-run/main_scene="res://main.tscn"
+run/main_scene="res://MainCanvasScene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,8 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1200
 window/size/viewport_height=540
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 
 [input_devices]
